@@ -1,0 +1,19 @@
+:root {
+    --c_redpink: #FB3B64;
+    --c_redpink_dark: #EB476E;
+    --c_blue: #07ACE6;
+    --c_blue_lighter: #07ACE6;
+    --c_blue_opaque: #07ACE629;
+    --c_green: #55DFB4;
+    --c_dark: #13253B;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1352px;
+    margin: auto;
+}
