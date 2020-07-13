@@ -58,7 +58,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 32px;
     font-weight: 300;
-    color: #07ACE6;
+    color: var(--c_blue_lighter);
     line-height: 70px;
 }
 
@@ -74,9 +74,6 @@ body {
     flex-wrap: wrap;
 }
 
-.navigation_list li {
-
-}
 
 .navigation_link {
     font-family: 'Open Sans', sans-serif;
@@ -254,6 +251,10 @@ body {
     /*flex-shrink: 0;*/
     border: 1px solid #E8E9ED;
     border-radius: 5px;
+    display: flex;
+    padding: 35px;
+    position: relative;
+    justify-content: space-between;
 }
 
 .benefits_box.benefits_box--first {
@@ -269,18 +270,104 @@ body {
 .benefits_box.benefits_box--smallest {
     width: 40%;
     background: var(--c_green);
+    padding: 100px 80px 60px 60px;
 }
 
 .benefits_content {
+    width: 415px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.benefits_header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.benefits_description {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 30px 0 50px;
+    position: relative;
+}
+
+.benefits_description::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+}
+
+.benefits_box--first .benefits_description::after {
+    border-top: 1px solid var(--c_redpink);
+    box-shadow: 0 0 1px 1px var(--c_redpink);
+}
+
+.benefits_box--second .benefits_description::after {
+    border-top: 1px solid var(--c_blue);
+    box-shadow: 0 0 1px 1px var(--c_blue);
+}
+
+.benefits_box--small .benefits_description::after {
+    border-top: 1px solid var(--c_green);
+    box-shadow: 0 0 1px 1px var(--c_green);
 }
 
 .benefits_graphics {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.benefits_image {
+    width: 385px;
+    z-index: 2;
+}
+
+.benefits_image.benefits_image--iphone {
+    transform: translate(-25px, 9%);;
+}
+
+.benefits_image.benefits_image--trumpet {
+    background-image: url("../assets/Trumpet.png");
+    background-size: contain;
+}
+
+.benefits_square {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 200px;
+    width: 200px;
+    border-radius: 41px;
+    background: var(--c_redpink);
+    transform: translate(-120%, 20%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.benefits_circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: var(--c_blue);
+    transform: translate(35px, -20px);
+}
+
+.benefits_box--second .benefits_image {
+    justify-self: flex-start;
 }
 
 .pricing {
     padding: 100px 0;
-    width: 100%;
 }
 
 .pricing_title {
@@ -302,6 +389,7 @@ body {
     border: 2px solid black;
     margin: 60px 30px;
     border-radius: 18px;
+    position: relative;
 }
 
 .pricing_offer.pricing_offer--basic {
@@ -339,6 +427,37 @@ body {
 .pricing_feature {
 }
 
+.pricing_button {
+    position: absolute;
+    content: "Begin";
+    top: 100%;
+    left: 50%;
+    width: 150px;
+    height: 50px;
+    background: #13253B;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.pricing_offer--basic .pricing_button {
+    background: var(--c_redpink);
+}
+
+.pricing_offer--professional .pricing_button {
+    background: var(--c_blue);
+    width: 165px;
+}
+
+.pricing_offer--premium .pricing_button {
+    background: var(--c_green);
+}
+
 .contact {
     display: flex;
 }
@@ -362,6 +481,7 @@ body {
 .form {
     display: flex;
     flex-direction: column;
+    padding: 60px 0;
 }
 
 .form_input {
@@ -374,4 +494,36 @@ body {
 
 .form_submit {
 
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background: #f7f7f7;
+    box-shadow: 0 -5px 40px #00000029;
+}
+
+.footer_column {
+
+}
+
+.footer_logo {
+    text-decoration: none;
+    color: var(--c_blue_lighter);
+    font-size: 26px;
+    line-height: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer_copyright {
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+    color: #a5a5a5;
+}
+
+.footer_icon {
+    margin: 10px;
 }
