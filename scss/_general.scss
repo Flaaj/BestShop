@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 1124px;
+    max-width: 100%;
+    margin: auto;
+
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+
+    &.container--wide {
+        width: 1352px;
+    }
+
+    &.container--narrow {
+        width: 896px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+}

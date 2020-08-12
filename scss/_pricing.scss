@@ -1,0 +1,229 @@
+.pricing {
+    padding: 100px 0;
+}
+
+.pricing_title {
+    text-align: center;
+    line-height: 42px;
+    font-size: 36px;
+    font-family: "Raleway", sans-serif;
+}
+
+.pricing_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing_offer {
+    height: 460px;
+    width: 370px;
+    border: 2px solid;
+    margin: 60px 30px;
+    border-radius: 18px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    &.pricing_offer--basic {
+        border: 2px solid $c-redpink;
+    }
+
+    &.pricing_offer--professional {
+        height: 500px;
+        width: 405px;
+        border: 2px solid $c-blue;
+        box-shadow: 5px 10px 27px #07ace629;
+    }
+
+    &.pricing_offer--premium {
+        border: 2px solid $c-green;
+    }
+}
+
+.pricing_offer--basic {
+    .pricing_button {
+        background: $c-redpink;
+    }
+
+    .pricing_feature:nth-child(-n + 3) {
+        &::before {
+            background: url(../assets/checkmark-yes.svg);
+        }
+    }
+
+    .pricing_feature:nth-child(n + 4) {
+        &::before {
+            background: url(../assets/checkmark-no.svg);
+        }
+    }
+
+    .pricing_price {
+        color: $c-redpink;
+    }
+}
+
+.pricing_offer--professional {
+    .pricing_button {
+        background: $c-blue;
+        width: 165px;
+    }
+
+    .pricing_feature {
+        &:nth-child(-n + 4) {
+            margin: 12px;
+            &::before {
+                background: url(../assets/checkmark-yes.svg);
+            }
+        }
+
+        &:nth-child(5) {
+            margin: 12px;
+            &::before {
+                background: url(../assets/checkmark-no.svg);
+            }
+        }
+    }
+
+    .pricing_price {
+        color: $c-blue;
+    }
+}
+
+.pricing_offer--premium {
+    .pricing_button {
+        background: $c-green;
+    }
+
+    .pricing_feature {
+        &::before {
+            background: url(../assets/checkmark-yes.svg);
+        }
+    }
+    .pricing_price {
+        color: $c-green;
+    }
+}
+
+.pricing_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40%;
+}
+
+.pricing_header {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    margin-top: 35px;
+}
+
+.pricing_price {
+    font-size: 46px;
+    font-family: "Raleway", sans-serif;
+    margin: 14px 0 5px 0;
+    font-weight: 300;
+    display: block;
+}
+
+.pricing_limited {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+}
+
+.pricing_features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.pricing_feature {
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    display: block;
+    margin: 10px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 11px;
+        height: 11px;
+        transform: translate(-180%, 20%);
+    }
+}
+
+.pricing_button {
+    position: absolute;
+    content: "Begin";
+    top: 100%;
+    left: 50%;
+    width: 150px;
+    height: 50px;
+    background: #13253b;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+@media (max-width: 870px) {
+    .pricing_row {
+        flex-direction: column;
+    }
+
+    .pricing_offer {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 260px;
+        margin: 30px 0;
+
+        .pricing_wrapper {
+            align-items: flex-start;
+        }
+
+        .pricing_header {
+            padding-bottom: 10px;
+        }
+
+        .pricing_price {
+            padding-bottom: 20px;
+        }
+
+        .pricing_limited {
+            padding-bottom: 40px;
+        }
+
+        .pricing_features {
+            align-items: flex-start;
+        }
+
+        &.pricing_offer--basic {
+            height: 300px;
+            max-width: 100%;
+        }
+
+        &.pricing_offer--professional {
+            height: 300px;
+            max-width: 110%;
+        }
+
+        &.pricing_offer--premium {
+            height: 300px;
+            max-width: 100%;
+        }
+    }
+}

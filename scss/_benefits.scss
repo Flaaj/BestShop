@@ -1,0 +1,220 @@
+@mixin stripe($color) {
+    &::after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 300px;
+        max-width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 4px;
+        border-top: 1px solid $color;
+        box-shadow: 0 0 1px 1px $color;
+        @content;
+    }
+}
+
+.benefits {
+    background: #f7f7f7;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+
+.benefits_box {
+    margin: 20px 0;
+    height: 370px;
+    width: 100%;
+    background: white;
+    border: 1px solid #e8e9ed;
+    border-radius: 5px;
+    display: flex;
+    padding: 35px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.benefits_box--first {
+    .benefits_description {
+        @include stripe($c-redpink);
+    }
+
+    .benefits_content {
+        max-width: 45%;
+    }
+}
+
+.benefits_box--second {
+    .benefits_description {
+        @include stripe($c-blue);
+    }
+
+    .benefits_content {
+        max-width: 45%;
+    }
+}
+
+.benefits_box--small {
+    width: 55%;
+
+    .benefits_description {
+        @include stripe($c-green);
+    }
+}
+
+.benefits_box--smallest {
+    width: 40%;
+    background: $c-green;
+    padding: 0;
+}
+
+.benefits_content {
+    max-width: 415px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.benefits_header {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.benefits_description {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 30px 0 50px;
+    position: relative;
+}
+
+.benefits_wrapper {
+    max-width: 450px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: seagreen;
+}
+
+.benefits_graphics {
+    max-width: 385px;
+    max-width: 85%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rebeccapurple;
+}
+
+.benefits_image {
+    max-width: 100%;
+    z-index: 2;
+
+    &.benefits_image--iphone {
+        transform: translate(9%, 5%);
+    }
+
+    &.benefits_image--trumpet {
+        height: 100%;
+        width: 100%;
+        background: url("../assets/trumpet.png") center center no-repeat;
+        background-size: auto 60%;
+        transform: translate(-5%, 10%);
+    }
+}
+
+.benefits_square {
+    flex-shrink: 1;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 0.9 * 57%;
+    height: 0.9 * 100%;
+    border-radius: 41px;
+    background: $c-redpink;
+    transform: translate(-95%, -30%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.benefits_circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300 / 385 * 100%;
+    height: 300 / 300 * 100%;
+    border-radius: 50%;
+    background: $c-blue;
+    transform: translate(0, -7px);
+}
+
+@media (max-width: 700px) {
+    .benefits {
+        padding: 40px 0;
+    }
+
+    .benefits_box {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 400px;
+        padding: 10px;
+
+        &.benefits_box--small {
+            margin-bottom: 0;
+            width: 100%;
+            height: 260px;
+        }
+
+        &.benefits_box--smallest {
+            margin-top: 0;
+            width: 100%;
+            height: 200px;
+        }
+
+        .benefits_content {
+            max-width: 90%;
+            width: 90%;
+        }
+    }
+
+    .benefits_wrapper {
+        height: 50%;
+        align-items: center;
+        &:nth-child(2) {
+            order: -1;
+        }
+    }
+
+    .benefits_graphics {
+        max-width: 60%;
+        margin: 30px;
+    }
+
+    .benefits_image {
+        .benefits_image--trumpet {
+            background-size: auto 90%;
+        }
+    }
+
+    .benefits_content {
+        max-width: 90%;
+        width: 90%;
+        padding: 0;
+    }
+
+    .benefits_header {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .benefits_description {
+        padding: 10px 0;
+        font-size: calc(10px + 1vw);
+        @include stripe(none) {
+            display: none;
+        }
+    }
+}

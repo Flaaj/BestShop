@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background: #f7f7f7;
+    box-shadow: 0 -5px 40px #00000029;
+}
+
+.footer_column {
+}
+
+.footer_logo {
+    text-decoration: none;
+    color: var(--c_blue_lighter);
+    font-size: 26px;
+    line-height: 30px;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer_copyright {
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+    color: #a5a5a5;
+}
+
+.footer_icon {
+    margin: 10px;
+}

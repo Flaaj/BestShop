@@ -1,0 +1,90 @@
+@mixin addIcon($icon-URL) {
+    &::after {
+        content: "";
+        position: absolute;
+        width: 63px;
+        height: 63px;
+        transform: translate(35%, 0);
+        background: url($icon-URL) no-repeat center center;
+    }
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.stats_header {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    padding-bottom: 100px;
+}
+
+.stats_row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 13px;
+}
+
+.stats_icon {
+    height: 63px;
+    width: 63px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.stats_item--entries .stats_icon {
+    background: $c-redpink;
+    @include addIcon("../assets/person.svg");
+}
+
+.stats_item--seen .stats_icon {
+    background: $c-green;
+    @include addIcon("../assets/eye.svg");
+}
+
+.stats_item--posts .stats_icon {
+    background: $c-blue;
+    @include addIcon("../assets/catalog.svg");
+}
+
+.stats_number {
+    letter-spacing: 6px;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 20px;
+    padding: 13px 0 19px 0;
+}
+
+.stats_description {
+    color: grey;
+    font-size: 17px;
+    font-family: "Raleway", sans-serif;
+    line-height: 20px;
+}
+
+@media (max-width: 700px) {
+    .stats {
+        padding: 50px 0;
+    }
+
+    .stats_header {
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .stats_row {
+        flex-direction: column;
+    }
+}
