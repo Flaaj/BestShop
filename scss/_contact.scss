@@ -1,5 +1,6 @@
 .contact {
     display: flex;
+    padding: 50px 0;
 }
 
 .contact_column {
@@ -114,7 +115,7 @@
     border-radius: 4px;
     border: 1px solid #95989a;
     margin-left: -2px;
-
+    transform: translate(3px, 0);
     &:checked {
         background: url(../assets/checkmark.svg) center center no-repeat;
         background-size: 12px;
@@ -136,6 +137,7 @@
     line-height: 18px;
     margin-top: 20px;
     margin-left: auto;
+    font-weight: bold;
 }
 
 @media (max-width: 800px) {
