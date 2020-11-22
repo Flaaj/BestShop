@@ -49,10 +49,10 @@ const listOfPrices = {
     Product: 0.5,
     Order: 0.25,
     Basic: 0,
-    Accounting: 30,
-    Terminal: 10,
     Professional: 25,
     Premium: 50,
+    Accounting: 30,
+    Terminal: 10,
 };
 
 const totalPrices = {
